@@ -1,24 +1,12 @@
-import { useState } from "react";
-
-export default function Education() {
-  const [educationList, setEducationList] = useState([
-    {
-      id: "1",
-      school: "",
-      degree: "",
-      startDate: "",
-      endDate: "",
-    },
-  ]);
-
+export default function Education({ educationList, setEducationList }) {
   function addNewEducation() {
     const newEntry = {
-      id: Date.now().toString,
+      id: Date.now().toString(),
       school: "",
       degree: "",
       startDate: "",
       endDate: "",
-    }; 
+    };
     setEducationList([...educationList, newEntry]);
   }
   function handleChange(id, field, value) {
@@ -88,7 +76,9 @@ export default function Education() {
           </div>
         );
       })}
-      <button onClick={addNewEducation}>Add Education</button>
+      <button onClick={addNewEducation} type="button">
+        Add Education
+      </button>
     </>
   );
 }

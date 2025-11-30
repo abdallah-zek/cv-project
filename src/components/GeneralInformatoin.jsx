@@ -1,11 +1,4 @@
-import { useState } from "react";
-
-export default function GeneralInformation() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [emailInput, setEmailInput] = useState("");
-  const [phoneInput, setPhoneInput] = useState("");
-
+export default function GeneralInformation({ personalInfo, setPersonalInfo }) {
   /*
   console.log(useState([]));
     okay , lets fix this first ! 
@@ -24,35 +17,35 @@ export default function GeneralInformation() {
       <input
         type="text"
         placeholder="First name"
-        value={firstName}
+        value={personalInfo.firstName}
         onChange={(event) => {
-          setFirstName(event.target.value);
+          setPersonalInfo({ ...personalInfo, firstName: event.target.value });
         }}
       />
 
       <input
         type="text"
         placeholder="Last name"
-        value={lastName}
+        value={personalInfo.lastName}
         onChange={(event) => {
-          setLastName(event.target.value);
+          setPersonalInfo({ ...personalInfo, lastName: event.target.value });
         }}
       />
       <input
         type="email"
         placeholder="Email"
-        value={emailInput}
+        value={personalInfo.emailInput}
         onChange={(event) => {
-          setEmailInput(event.target.value);
+          setPersonalInfo({ ...personalInfo, emailInput: event.target.value });
         }}
       />
 
       <input
         type="tel"
         placeholder="Phone"
-        value={phoneInput}
+        value={personalInfo.phoneInput}
         onChange={(event) => {
-          setPhoneInput(event.target.value);
+          setPersonalInfo({ ...personalInfo, phoneInput: event.target.value });
         }}
       />
 

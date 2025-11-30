@@ -1,12 +1,4 @@
-import { useState } from "react";
-
-export default function Experience() {
-  const [experienceList, setExperienceList] = useState({
-    company: "",
-    startYear: "",
-    endYear: "",
-    position: "",
-  });
+export default function Experience({ experienceList, setExperienceList }) {
   return (
     <>
       <br />
