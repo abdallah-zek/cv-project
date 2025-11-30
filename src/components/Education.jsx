@@ -19,6 +19,15 @@ export default function Education({ educationList, setEducationList }) {
     });
     setEducationList(updateEducationList);
   }
+  // remove thing
+  function handleRemove(id) {
+    if (educationList.length > 1) {
+      const filterEducation = educationList.filter(function (entry) {
+        return entry.id !== id;
+      });
+      setEducationList(filterEducation);
+    }
+  }
 
   return (
     <>
@@ -73,6 +82,14 @@ export default function Education({ educationList, setEducationList }) {
                 placeholder="2024"
               />
             </div>
+            <button
+              type="button"
+              onClick={function () {
+                handleRemove(entry.id);
+              }}
+            >
+              Remove
+            </button>
           </div>
         );
       })}
